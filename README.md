@@ -8,6 +8,7 @@ The motivation behind this project was to practice and implement the basic techn
 
 - [Description](#description)
 - [Usage](#usage)
+- [Deployment](#deployment)
 - [Credits](#credits)
 - [License](#license)
 
@@ -24,6 +25,10 @@ The process starts when the user clicks the button. Following this the user is a
 
 Screenshot:
 ![My Password Generator](./assets/images/screenshot.jpg)
+
+## Deployment
+
+https://tvml24.github.io/unique-personal-algorithmic-password-generator/
 
 ## Credits
 
