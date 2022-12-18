@@ -46,21 +46,102 @@ var generatePassword = function() {
       if ((includeLowercase === false) && (includeUppercase === false) && (includeNumeric === false) && (includespecialCharacters === false)) {
         alert("You haven't selected any character sets!");
 // checks which values are to be used using true/false checks
+// single character sets
       } else if ((includeLowercase === true) && (includeUppercase === false) && (includeNumeric === false) && (includespecialCharacters === false)){
-      }}}
-
 // uses a random number to select one of the possible characters
 // start for loop until i > password length
-
+          for (var i = 0, n = character.lowerCase.length; i < passwordLength; ++i) {
+           passwordHolder += character.lowerCase[(Math.floor(Math.random() * n))];
+           }
 // when the password has finished being generated it is presented in an alert OR returned to the writePassword function
-
+          return passwordHolder;
+      } else if ((includeLowercase === false) && (includeUppercase === true) && (includeNumeric === false) && (includespecialCharacters === false)){
+          for (var i = 0, n = character.upperCase.length; i < passwordLength; ++i) {
+            passwordHolder += character.upperCase[(Math.floor(Math.random() * n))];
+            }
+           return passwordHolder;
+      } else if ((includeLowercase === false) && (includeUppercase === false) && (includeNumeric === true) && (includespecialCharacters === false)){
+          for (var i = 0, n = character.numeric.length; i < passwordLength; ++i) {
+            passwordHolder += character.numeric[(Math.floor(Math.random() * n))];
+            }
+           return passwordHolder;
+      } else if ((includeLowercase === false) && (includeUppercase === false) && (includeNumeric === false) && (includespecialCharacters === true)){
+          for (var i = 0, n = character.specialCharacters.length; i < passwordLength; ++i) {
+            passwordHolder += character.specialCharacters[(Math.floor(Math.random() * n))];
+            }
+           return passwordHolder;
+      } else if ((includeLowercase === true) && (includeUppercase === true) && (includeNumeric === true) && (includespecialCharacters === true)){
 // when two or more characters sets are required they must be combined using the concat method prior to compiling the password
 // all character sets
-
+          var characterHolder = character.lowerCase.concat(character.upperCase, character.numeric, character.specialCharacters);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+           return passwordHolder;
 //groups of three character sets
-
+      } else if ((includeLowercase === true) && (includeUppercase === true) && (includeNumeric === true) && (includespecialCharacters === false)){
+          var characterHolder = character.lowerCase.concat(character.upperCase, character.numeric);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === true) && (includeUppercase === true) && (includeNumeric === false) && (includespecialCharacters === true)){
+          var characterHolder = character.lowerCase.concat(character.upperCase, character.specialCharacters);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === true) && (includeUppercase === false) && (includeNumeric === true) && (includespecialCharacters === true)){
+          var characterHolder = character.lowerCase.concat(character.numeric, character.specialCharacters);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === false) && (includeUppercase === true) && (includeNumeric === true) && (includespecialCharacters === true)){
+          var characterHolder = character.upperCase.concat(character.numeric, character.specialCharacters);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
 // pair groupings with lowerCase Set
-
+      } else if ((includeLowercase === true) && (includeUppercase === true) && (includeNumeric === false) && (includespecialCharacters === false)){
+          var characterHolder = character.lowerCase.concat(character.upperCase);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === true) && (includeUppercase === false) && (includeNumeric === true) && (includespecialCharacters === false)){
+          var characterHolder = character.lowerCase.concat(character.numeric);
+          for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === true) && (includeUppercase === false) && (includeNumeric === false) && (includespecialCharacters === true)){
+          var characterHolder = character.lowerCase.concat(character.specialCharacters);
+            for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
 // pair groupings with upperCase set 
-
+      } else if ((includeLowercase === false) && (includeUppercase === true) && (includeNumeric === true) && (includespecialCharacters === false)){
+          var characterHolder = character.upperCase.concat(character.numeric);
+            for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      } else if ((includeLowercase === false) && (includeUppercase === true) && (includeNumeric === false) && (includespecialCharacters === true)){
+          var characterHolder = character.upperCase.concat(character.specialCharacters);
+            for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
 // pair groupings with numeric set 
+      } else if ((includeLowercase === false) && (includeUppercase === false) && (includeNumeric === true) && (includespecialCharacters === true)){
+          var characterHolder = character.numeric.concat(character.specialCharacters);
+            for (var i = 0, n = characterHolder.length; i < passwordLength; ++i) {
+            passwordHolder += characterHolder[(Math.floor(Math.random() * n))];
+            }
+            return passwordHolder;
+      }
+    }
+  }
