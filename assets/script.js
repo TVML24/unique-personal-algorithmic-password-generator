@@ -23,7 +23,7 @@ const character = {
 };
 
 // create an empty variable called passwordHolder
-var passwordHolder = " ";
+var passwordHolder = "";
 
 // Generate Password Function
 var generatePassword = function() {
